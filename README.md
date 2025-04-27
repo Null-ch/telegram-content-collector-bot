@@ -1,62 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Telegram Content Collector Bot
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Бот для сбора контента из Telegram с использованием Laravel и MadelineProto.
 
-## About Laravel
+## Описание
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Этот проект представляет собой бота для сбора контента из Telegram. Он построен на базе фреймворка Laravel и использует библиотеку MadelineProto для работы с Telegram API.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Требования
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.2 или выше
+- Composer
+- Node.js и NPM
+- SQLite (или другая поддерживаемая база данных)
 
-## Learning Laravel
+## Установка
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/Null-ch/telegram-content-collector-bot.git
+cd telegram-content-collector-bot
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. Установите зависимости PHP:
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Установите зависимости Node.js:
+```bash
+npm install
+```
 
-## Laravel Sponsors
+4. Скопируйте файл конфигурации:
+```bash
+cp .env.example .env
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. Сгенерируйте ключ приложения:
+```bash
+php artisan key:generate
+```
 
-### Premium Partners
+6. Настройте переменные окружения в файле `.env`:
+```
+TG_API_ID=ваш_api_id
+TG_API_HASH=ваш_api_hash
+TG_TARGET_USERNAME=имя_пользователя_для_сбора
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+7. Запустите миграции:
+```bash
+php artisan migrate
+```
 
-## Contributing
+## Запуск
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Для разработки:
+```bash
+composer dev
+```
 
-## Code of Conduct
+Для продакшена:
+```bash
+php artisan serve
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Структура проекта
 
-## Security Vulnerabilities
+- `app/` - Основной код приложения
+- `config/` - Конфигурационные файлы
+- `database/` - Миграции и сиды
+- `routes/` - Маршруты приложения
+- `resources/` - Ресурсы (views, assets)
+- `storage/` - Файлы хранилища
+- `tests/` - Тесты
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Технологии
 
-## License
+- Laravel 12
+- MadelineProto 8.4
+- PHP 8.2
+- SQLite
+- Node.js
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# telegram-content-collector-bot
+## Лицензия
+
+MIT
+
+## Автор
+
+[Ваше имя]
+
+## Поддержка
+
+Если у вас возникли вопросы или проблемы, создайте issue в репозитории проекта.
